@@ -1,7 +1,8 @@
 # Visual Studio 2015 user specific files
 .vs/
 .vscode/
-Bionic.code-workspace
+.idea/
+*.code-workspace
 
 # Compiled Object files
 *.slo
@@ -75,3 +76,6 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# UBT-generated project file
+Makefile
