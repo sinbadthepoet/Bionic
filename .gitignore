@@ -79,3 +79,7 @@ DerivedDataCache/*
 
 # UBT-generated project file
 Makefile
+
+# clangd
+compile_commands.json
+.cache/
