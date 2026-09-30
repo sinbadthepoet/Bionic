@@ -4,7 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+
 #include "Biped.generated.h"
+
+struct FInputActionValue;
 
 UCLASS()
 class BIONIC_API ABiped : public ACharacter
@@ -22,8 +25,24 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
+	
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	// INPUT
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	class UInputMappingContext* InputMappingContext;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	class UInputAction* MoveAction;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputAction* LookAction;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputAction* JumpAction;
+	
+	// ACTIONS
+	void Move(const FInputActionValue& Value);
+	void Look(const FInputActionValue& Value);
 };
